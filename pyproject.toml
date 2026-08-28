@@ -1,0 +1,16 @@
+[project]
+name = "echo-world"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "logcat-io", email = "82052272+logcat-io@users.noreply.github.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+echo-world = "echo_world:main"
+
+[build-system]
+requires = ["uv_build>=0.9.26,<0.10.0"]
+build-backend = "uv_build"
