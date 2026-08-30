@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0a0d0f">
+    <meta
+      name="description"
+      content="선택과 약속을 기억하는 AI 텍스트 어드벤처, ECHO WORLD"
+    >
+    <title>ECHO WORLD — 루미나 폐역</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <a class="skipLink" href="#storyLog">이야기로 바로가기</a>
+
+    <div class="ambient ambientOne" aria-hidden="true"></div>
+    <div class="ambient ambientTwo" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <div class="appShell">
+      <header class="topBar">
+        <a class="brand" href="./" aria-label="ECHO WORLD 처음 화면">
+          <span class="brandMark" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+          <span class="brandCopy">
+            <strong>ECHO WORLD</strong>
+            <small>ARCHIVE / LUMINA–09</small>
+          </span>
+        </a>
+
+        <div class="topStatus" aria-label="시스템 상태">
+          <span class="statusPill">
+            <span class="statusDot" aria-hidden="true"></span>
+            <span data-ui="connection-label">기억 시뮬레이션</span>
+          </span>
+          <span class="cycleLabel">기록 주기 <strong data-ui="version-top">00</strong></span>
+        </div>
+
+        <button class="iconButton" type="button" data-action="reset" disabled>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 12a8 8 0 1 0 2.34-5.66L4 8.68M4 4v4.68h4.68" />
+          </svg>
+          <span>새 기록</span>
+        </button>
+      </header>
+
+      <main class="worldLayout">
+        <aside class="worldRail" aria-label="세계 상태">
+          <section class="railSection locationSection">
+            <div class="eyebrowRow">
+              <span class="eyebrow">CURRENT LOCATION</span>
+              <span class="signalBars" aria-label="신호 약함">
+                <i></i><i></i><i></i><i></i>
+              </span>
+            </div>
+            <h2>루미나 폐역</h2>
+            <p>마지막 열차가 사라진 뒤<br>기억만 도착하는 종착역</p>
+
+            <div class="stationMap" aria-label="루미나 폐역 노선도">
+              <span class="track trackVertical" aria-hidden="true"></span>
+              <span class="track trackBranch" aria-hidden="true"></span>
+              <span class="station active"><i></i><b>승강장 09</b><small>현재</small></span>
+              <span class="station locked"><i></i><b>기록 보관소</b><small>잠김</small></span>
+              <span class="station dormant"><i></i><b>무명 터널</b><small>미확인</small></span>
+            </div>
+          </section>
+
+          <section class="railSection relationSection">
+            <div class="sectionHeading">
+              <span class="eyebrow">RELATION SIGNAL</span>
+              <span class="tinyLabel">LIVE</span>
+            </div>
+
+            <article class="characterSignal">
+              <div class="portrait portraitSera" aria-hidden="true">S</div>
+              <div class="characterMeta">
+                <div><strong>세라</strong><span data-ui="sera-label">경계 중</span></div>
+                <progress data-ui="sera-progress" max="100" value="50">0</progress>
+              </div>
+              <output data-ui="sera-value" aria-label="세라 관계도">+0</output>
+            </article>
+
+            <article class="characterSignal">
+              <div class="portrait portraitMorrow" aria-hidden="true">M</div>
+              <div class="characterMeta">
+                <div><strong>모로우</strong><span data-ui="morrow-label">신호 없음</span></div>
+                <progress data-ui="morrow-progress" max="100" value="50">0</progress>
+              </div>
+              <output data-ui="morrow-value" aria-label="모로우 관계도">+0</output>
+            </article>
+          </section>
+
+          <blockquote class="railQuote">
+            “역은 잊지 않는다.<br>사람이 잊을 뿐.”
+            <cite>— 소실된 역무 일지, 17쪽</cite>
+          </blockquote>
+        </aside>
+
+        <section class="storyStage" aria-label="진행 중인 이야기">
+          <header class="storyHeader">
+            <div>
+              <span class="chapterIndex">CHAPTER 01</span>
+              <h1>도착하지 않은 열차</h1>
+            </div>
+            <div class="storyMeta">
+              <span>세계시각</span>
+              <time data-ui="world-time">23:47</time>
+            </div>
+          </header>
+
+          <div
+            class="storyLog"
+            id="storyLog"
+            data-ui="story-log"
+            role="log"
+            aria-live="polite"
+            aria-relevant="additions"
+            tabindex="-1"
+          ></div>
+
+          <div class="thinking" data-ui="thinking" hidden aria-live="polite">
+            <span class="thinkingGlyph" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span>기억의 결을 따라 다음 장면을 구성하는 중</span>
+          </div>
+
+          <div class="suggestionWrap" data-ui="suggestions" hidden>
+            <span class="suggestionLabel">추천 행동</span>
+            <div class="suggestionList">
+              <button type="button" data-suggestion="세라에게 지도를 숨기겠다고 약속한다.">
+                비밀을 지키겠다고 약속한다
+              </button>
+              <button type="button" data-suggestion="벽에 남은 열차 시간표를 자세히 살펴본다.">
+                시간표의 흔적을 조사한다
+              </button>
+              <button type="button" data-suggestion="어둠 속 발소리를 향해 누구냐고 묻는다.">
+                발소리의 주인을 부른다
+              </button>
+            </div>
+          </div>
+
+          <form class="actionComposer" data-ui="composer">
+            <label for="action">다음 행동</label>
+            <div class="composerFrame">
+              <textarea
+                id="action"
+                data-ui="action-input"
+                rows="2"
+                maxlength="500"
+                placeholder="당신의 선택을 기록하세요…"
+                disabled
+              ></textarea>
+              <div class="composerFooter">
+                <span class="keyHint"><kbd>⌘</kbd><span>+</span><kbd>↵</kbd> 전송</span>
+                <span class="charCount"><span data-ui="char-count">0</span> / 500</span>
+                <button class="sendButton" data-ui="send" type="submit" disabled>
+                  <span>행동 기록</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m5 12 13-7-4.5 14-2.2-5.3L5 12Z" />
+                    <path d="m11.3 13.7 3.5-4" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </form>
+        </section>
+
+        <aside class="memoryRail" aria-label="세션과 장기 기억">
+          <section class="memorySection sessionSection">
+            <div class="sectionHeading">
+              <span class="eyebrow">ACTIVE ARCHIVE</span>
+              <span class="archiveIcon" aria-hidden="true">⌁</span>
+            </div>
+            <dl class="sessionGrid">
+              <div>
+                <dt>기록자</dt>
+                <dd data-ui="role-value">미지정</dd>
+              </div>
+              <div>
+                <dt>목표</dt>
+                <dd data-ui="goal-value">기록 대기 중</dd>
+              </div>
+              <div>
+                <dt>세션</dt>
+                <dd class="mono" data-ui="session-value">—</dd>
+              </div>
+              <div>
+                <dt>버전</dt>
+                <dd class="mono" data-ui="version-value">v.00</dd>
+              </div>
+            </dl>
+          </section>
+
+          <section class="memorySection">
+            <div class="sectionHeading">
+              <span class="eyebrow">WORLD STATE</span>
+              <span class="countBadge" data-ui="state-count">0</span>
+            </div>
+            <div class="stateCloud" data-ui="world-state">
+              <span class="emptyTag">아직 변한 것은 없다</span>
+            </div>
+          </section>
+
+          <section class="memorySection memoryArchive">
+            <div class="sectionHeading">
+              <span class="eyebrow">DURABLE MEMORY</span>
+              <span class="countBadge" data-ui="memory-count">0</span>
+            </div>
+            <ol class="memoryList" data-ui="memory-list">
+              <li class="emptyMemory">
+                <span class="memoryRune" aria-hidden="true">◇</span>
+                <p>중요한 약속과 사건이<br>여기에 남습니다.</p>
+              </li>
+            </ol>
+          </section>
+
+          <div class="memoryFootnote">
+            <span aria-hidden="true">※</span>
+            <p>기억은 다음 접속에도 유지되며<br>이후 대화의 맥락으로 사용됩니다.</p>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <div class="entryOverlay" data-ui="entry-overlay">
+      <section class="entryCard" role="dialog" aria-modal="true" aria-labelledby="entry-title">
+        <div class="entrySeal" aria-hidden="true">
+          <span>09</span>
+        </div>
+        <span class="entryKicker">IDENTITY RECOVERY PROTOCOL</span>
+        <h2 id="entry-title">당신은 누구였습니까?</h2>
+        <p class="entryLead">
+          루미나 폐역은 이름보다 역할을, 목적보다 간절함을 기억합니다.
+          남아 있는 두 조각을 기록하세요.
+        </p>
+
+        <form data-ui="entry-form">
+          <div class="fieldGroup">
+            <label for="role">잃어버린 역할</label>
+            <input
+              id="role"
+              data-ui="role-input"
+              value="기억을 잃은 기록관"
+              maxlength="80"
+              autocomplete="off"
+              required
+            >
+            <div class="rolePresets" aria-label="역할 예시">
+              <button type="button" data-role="기억을 잃은 기록관">기록관</button>
+              <button type="button" data-role="마지막 열차를 놓친 역무원">역무원</button>
+              <button type="button" data-role="이름 없는 시간 여행자">여행자</button>
+            </div>
+          </div>
+
+          <div class="fieldGroup">
+            <label for="goal">끝내 이루려는 것</label>
+            <textarea
+              id="goal"
+              data-ui="goal-input"
+              rows="2"
+              maxlength="160"
+              required
+            >마지막 열차의 비밀을 찾는다</textarea>
+          </div>
+
+          <button class="enterButton" type="submit" data-ui="enter-button">
+            <span>기억 속으로 입장</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h13M13 6l6 6-6 6" />
+            </svg>
+          </button>
+        </form>
+
+        <p class="entryNotice">
+          <span class="statusDot" aria-hidden="true"></span>
+          현재는 브라우저에 저장되는 MOCK 기록으로 체험할 수 있습니다.
+        </p>
+      </section>
+    </div>
+
+    <div class="toast" data-ui="toast" role="status" aria-live="polite" hidden>
+      <span class="toastMark" aria-hidden="true">!</span>
+      <span data-ui="toast-message"></span>
+      <button type="button" data-action="close-toast" aria-label="알림 닫기">×</button>
+    </div>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>
