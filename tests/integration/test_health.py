@@ -2,6 +2,7 @@ from httpx import ASGITransport, AsyncClient
 
 from echo_world.application.readiness import ReadinessUseCase
 from echo_world.external.api.app import create_app
+from echo_world.external.api.dependencies import get_readiness_use_case
 
 
 class FakeReadiness:
@@ -13,7 +14,10 @@ class FakeReadiness:
 
 
 async def request(path: str, *, ready: bool) -> tuple[int, dict]:
-    app = create_app(ReadinessUseCase(FakeReadiness(ready)))
+    app = create_app()
+    app.dependency_overrides[get_readiness_use_case] = (
+        lambda: ReadinessUseCase(FakeReadiness(ready))
+    )
     transport = ASGITransport(app=app)
     async with AsyncClient(transport=transport, base_url="http://test") as client:
         response = await client.get(path)
