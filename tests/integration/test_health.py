@@ -1,3 +1,5 @@
+from typing import Any
+
 from httpx import ASGITransport, AsyncClient
 
 from echo_world.application.readiness import ReadinessUseCase
@@ -13,10 +15,10 @@ class FakeReadiness:
         return self._ready
 
 
-async def request(path: str, *, ready: bool) -> tuple[int, dict]:
+async def request(path: str, *, ready: bool) -> tuple[int, dict[str, Any]]:
     app = create_app()
-    app.dependency_overrides[get_readiness_use_case] = (
-        lambda: ReadinessUseCase(FakeReadiness(ready))
+    app.dependency_overrides[get_readiness_use_case] = lambda: ReadinessUseCase(
+        FakeReadiness(ready)
     )
     transport = ASGITransport(app=app)
     async with AsyncClient(transport=transport, base_url="http://test") as client:

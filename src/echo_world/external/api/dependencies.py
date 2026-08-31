@@ -8,7 +8,12 @@ from echo_world.external.persistence.database import SqlAlchemyReadinessAdapter
 
 
 def get_engine(request: Request) -> AsyncEngine:
-    return cast(AsyncEngine, request.app.state.engine)
+    engine: AsyncEngine | None = getattr(request.app.state, "engine", None)
+    if engine is None:
+        raise RuntimeError(
+            "AsyncEngine is not initialized. lifespan did not run for this app instance."
+        )
+    return engine
 
 
 EngineDep = Annotated[AsyncEngine, Depends(get_engine)]
